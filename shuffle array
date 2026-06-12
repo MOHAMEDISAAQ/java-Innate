@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    List <Integer> li = new ArrayList<>();
+	    li.add(1);
+	    li.add(2);
+	    li.add(3);
+	    li.add(4);
+	    li.add(5);
+	 	li.removeIf(n -> n % 2 == 0);
+	    System.out.println("Original Array: \n"+ li);
+	    Collections.shuffle(li);
+	    System.out.println("Changed Array: \n"+ li);
