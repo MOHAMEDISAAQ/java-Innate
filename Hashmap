@@ -1,0 +1,40 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Student {
+    int id;
+    String name;
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public String toString() {
+        return "ID=" + id + ", Name=" + name;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Map<Integer, Student> students = new HashMap<>();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Student ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+        students.put(id, new Student(id, name));
+        System.out.println("\nHashMap:");
+        System.out.println(students);
+        System.out.print("\nEnter ID to search: ");
+        int searchId = sc.nextInt();
+        System.out.println("Student: " + students.get(searchId));
+        System.out.print("\nEnter ID to remove: ");
+        int removeId = sc.nextInt();
+        students.remove(removeId);
+
+        System.out.println("\nAfter Remove:");
+        System.out.println(students);
+
+        sc.close();
+    }
+}
