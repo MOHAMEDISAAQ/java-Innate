@@ -1,0 +1,25 @@
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "Dragon Warrior";
+		System.out.println("Length: " + str.length());
+		System.out.println("Uppercase: " + str.toUpperCase());
+		System.out.println("Lowercase: " + str.toLowerCase());
+		System.out.println("Sub String: " + str.substring(0,6));
+		System.out.println("Character: " + str.charAt(7));
+		System.out.println("Concatenation: " + str.concat(" 🐉 "));
+		System.out.println("Index: " + str.indexOf("Dragon"));
+		System.out.println(str.equalsIgnoreCase("dragon warrior"));
+		System.out.println(str.compareTo("Dragon Booster"));
+		System.out.println(str.replace('i','e'));
+		System.out.println(str.contains("Warrior"));
+		char[] chars = str.toCharArray();
+		for(char c: chars) {
+			System.out.print(c + " ");
+		}
+		String[] arr = str.split(" ");
+		for(String s : arr){
+		    System.out.println(s);
+		}
+	}
+}
