@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class DirectCrud {
+    public static void main(String[] args) {
+        ArrayList<String> items = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("\n1.Add 2.View 3.Edit 4.Delete 5.Exit: ");
+            int choice = input.nextInt();
+            input.nextLine();
+
+            if (choice == 1) {
+                System.out.print("Enter item name: ");
+                String name = input.nextLine();
+                items.add(name);
+                System.out.println("Added!");
+            }
+
+            else if (choice == 2) {
+                if (items.isEmpty()) {
+                    System.out.println("No items found.");
+                } else {
+                    System.out.println("Items: " + items);
+                }
+            }
+
+            else if (choice == 3) {
+                System.out.print("Enter index to edit: ");
+                int index = input.nextInt();
+                input.nextLine();
+
+                if (index >= 0 && index < items.size()) {
+                    System.out.print("Enter new name: ");
+                    String newName = input.nextLine();
+                    items.set(index, newName);
+                    System.out.println("Updated!");
+                } else {
+                    System.out.println("Invalid index!");
+                }
+            }
+
+            else if (choice == 4) {
+                System.out.print("Enter index to delete: ");
+                int index = input.nextInt();
+
+                if (index >= 0 && index < items.size()) {
+                    items.remove(index);
+                    System.out.println("Deleted!");
+                } else {
+                    System.out.println("Invalid index!");
+                }
+            }
+
+            else if (choice == 5) {
+                System.out.println("Exiting...");
+                break;
+            }
+
+            else {
+                System.out.println("Invalid choice!");
+            }
+        }
+
+        input.close();
+    }
+}
